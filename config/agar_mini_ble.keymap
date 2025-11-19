@@ -11,25 +11,18 @@
 #include <dt-bindings/zmk/outputs.h>
 
 / {
-    behaviors {
-        hmbt: homerow_mods_bt {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS_BT";
-            bindings = <&bt>, <&bt>;
-
-            #binding-cells = <2>;
-            quick-tap-ms = <130>;
-            tapping-term-ms = <200>;
-            flavor = "tap-preferred";
-        };
-    };
-
     combos {
         compatible = "zmk,combos";
 
         Space_ralt {
             bindings = <&kp RIGHT_ALT>;
             key-positions = <39 40>;
+            timeout-ms = <0>;
+        };
+
+        Qmark {
+            bindings = <&kp QMARK>;
+            key-positions = <34 33>;
         };
     };
 
