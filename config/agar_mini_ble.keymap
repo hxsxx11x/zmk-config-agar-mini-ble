@@ -133,10 +133,10 @@
 
         layer5 {
             bindings = <
-&trans  &msc SCRL_DOWN  &mmv MOVE_UP    &msc SCRL_UP     &mkp MB2  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp MB1  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &mkp MB4        &mkp MB3        &mkp MB5         &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-        &trans          &trans                           &trans            &trans                  &trans  &trans
+&trans  &msc SCRL_DOWN  &mmv MOVE_UP    &msc SCRL_UP     &mkp MB2  &kp ASTERISK  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp MB1  &trans        &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &mkp MB4        &mkp MB3        &mkp MB5         &trans    &trans        &trans  &trans  &trans  &trans  &trans  &trans
+        &trans          &trans                           &trans                  &trans                  &trans  &trans
             >;
         };
 
