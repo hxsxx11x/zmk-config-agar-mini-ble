@@ -24,6 +24,15 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        Space_ralt {
+            bindings = <&kp RIGHT_ALT>;
+            key-positions = <39 40>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
