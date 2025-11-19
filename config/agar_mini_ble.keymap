@@ -23,6 +23,16 @@
             bindings = <&kp RALT>;
             key-positions = <39 40>;
         };
+
+        OPtoParenthesis {
+            bindings = <&mt RIGHT_PARENTHESIS LEFT_PARENTHESIS>;
+            key-positions = <9 10>;
+        };
+
+        ShiftDelto_ {
+            bindings = <&mt UNDER MINUS>;
+            key-positions = <25 11>;
+        };
     };
 
     keymap {
