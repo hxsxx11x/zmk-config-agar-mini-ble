@@ -9,6 +9,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/pointing.h>
 
 / {
     combos {
@@ -44,6 +45,42 @@
 
             tapping-term-ms = <150>;
         };
+
+        TD_LEFT: TD_LEFT {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_LEFT";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT>, <&kp LG(LEFT)>;
+
+            tapping-term-ms = <100>;
+        };
+
+        TD_RIGHT: TD_RIGHT {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_RIGHT";
+            #binding-cells = <0>;
+            bindings = <&kp RIGHT>, <&kp LG(RIGHT)>;
+
+            tapping-term-ms = <100>;
+        };
+
+        TD_UP: TD_UP {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_UP";
+            #binding-cells = <0>;
+            bindings = <&kt UP>, <&kp LG(UP)>;
+
+            tapping-term-ms = <100>;
+        };
+
+        TD_DOWN: TD_DOWN {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_DOWN";
+            #binding-cells = <0>;
+            bindings = <&kp DOWN>, <&kp LG(DOWN)>;
+
+            tapping-term-ms = <100>;
+        };
     };
 
     keymap {
@@ -53,17 +90,17 @@
             bindings = <
 &gresc     &kp Q      &kp W     &kp E  &kp R        &kp T  &kp Y        &kp U  &kp I      &kp O         &kp P                &kp DEL          &kp BSPC
 &lt 3 TAB  &kp A      &kp S     &kp D  &kp F        &kp G  &kp H        &kp J  &kp K      &kp L         &TD_colon_quote      &kp RET
-&kp LSHFT  &kp Z      &kp X     &kp C  &kp V        &kp B  &kp N        &kp M  &kp COMMA  &kp DOT       &kp RSHIFT           &lt 4 LG(LS(S))
-           &kp LCTRL  &kp LALT         &lt 1 SPACE         &lt 2 SPACE                    &kp LEFT_GUI  &lt 5 RIGHT_CONTROL
+&kp LSHFT  &kp Z      &kp X     &kp C  &kp V        &kp B  &kp N        &kp M  &kp COMMA  &kp DOT       &kp RSHIFT           &lt 7 LG(LS(S))
+           &kp LCTRL  &kp LALT         &lt 1 SPACE         &lt 2 SPACE                    &kp LEFT_GUI  &lt 6 RIGHT_CONTROL
             >;
         };
 
         layer1 {
             bindings = <
-&kp GRAVE      &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp N6  &kp N7  &kp N8            &kp N9             &kp N0            &kp MINUS  &kp EQUAL
-&kp RIGHT_ALT  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp SINGLE_QUOTE  &trans
-&trans         &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp BACKSLASH     &kp SLASH          &trans            &trans
-               &trans  &trans          &trans          &trans                            &trans             &trans
+&kp GRAVE  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp N6  &kp N7  &kp N8            &kp N9             &kp N0            &kp MINUS  &kp EQUAL
+&mo 5      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp SINGLE_QUOTE  &trans
+&trans     &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp BACKSLASH     &kp SLASH          &trans            &trans
+           &trans  &trans          &trans          &trans                            &trans             &trans
             >;
         };
 
@@ -78,10 +115,10 @@
 
         layer3 {
             bindings = <
-&trans  &trans     &kp UP_ARROW  &trans     &kp PAGE_UP    &trans  &trans  &trans  &trans  &trans         &trans             &trans  &trans
-&trans  &kp LEFT   &kp DOWN      &kp RIGHT  &kp PAGE_DOWN  &trans  &trans  &trans  &trans  &trans         &trans             &trans
-&trans  &kp LC(Z)  &kp LC(X)     &kp LC(C)  &kp LC(V)      &trans  &trans  &trans  &trans  &trans         &trans             &trans
-        &trans     &trans                   &trans                 &trans                  &kp RIGHT_ALT  &kp RIGHT_CONTROL
+&trans  &trans     &TD_UP     &trans     &kp PAGE_UP    &trans  &trans  &trans  &trans  &trans         &trans             &trans  &trans
+&trans  &TD_LEFT   &TD_DOWN   &TD_RIGHT  &kp PAGE_DOWN  &trans  &trans  &trans  &trans  &trans         &trans             &trans
+&trans  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)      &trans  &trans  &trans  &trans  &trans         &trans             &trans
+        &trans     &trans                &trans                 &trans                  &kp RIGHT_ALT  &kp RIGHT_CONTROL
             >;
         };
 
@@ -96,10 +133,10 @@
 
         layer5 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-        &trans  &trans          &trans          &trans                  &trans  &trans
+&trans  &msc SCRL_DOWN  &mmv MOVE_UP    &msc SCRL_UP     &mkp MB2  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp MB1  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &mkp MB4        &mkp MB3        &mkp MB5         &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+        &trans          &trans                           &trans            &trans                  &trans  &trans
             >;
         };
 
