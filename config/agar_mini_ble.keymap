@@ -42,7 +42,7 @@
             #binding-cells = <0>;
             bindings = <&kp SQT>, <&kp SEMICOLON>;
 
-            tapping-term-ms = <110>;
+            tapping-term-ms = <150>;
         };
     };
 
