@@ -22,7 +22,7 @@
 
         Qmark {
             bindings = <&kp QMARK>;
-            key-positions = <34 33>;
+            key-positions = <34 35>;
         };
     };
 
