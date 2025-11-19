@@ -14,15 +14,14 @@
     combos {
         compatible = "zmk,combos";
 
-        Space_ralt {
-            bindings = <&kp RIGHT_ALT>;
-            key-positions = <39 40>;
-            timeout-ms = <0>;
-        };
-
         Qmark {
             bindings = <&kp QMARK>;
             key-positions = <34 35>;
+        };
+
+        Spaces_to_Ralt {
+            bindings = <&kp RALT>;
+            key-positions = <39 40>;
         };
     };
 
