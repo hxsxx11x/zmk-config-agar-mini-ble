@@ -41,6 +41,8 @@
             label = "TD_COLON_QUOTE";
             #binding-cells = <0>;
             bindings = <&kp SQT>, <&kp SEMICOLON>;
+
+            tapping-term-ms = <100>;
         };
     };
 
