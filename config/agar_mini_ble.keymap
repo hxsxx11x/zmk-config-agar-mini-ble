@@ -165,7 +165,7 @@
         KillAgree: KillAgree {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none &kp W &kp N &kp R &kp D &kp U &kp D &kp I &kp G &kp O &kp D &kp Y &kp RET &kp E &kp K &kp E &kp M &kp F &kp E &kp H &kp D &kp D &kp M &kp L &kp G &kp K &kp T &kp L &kp W &kp Y &kp QMARK &kp HOME>;
+            bindings = <&none &kp W &kp N &kp R &kp D &kp U &kp D &kp I &kp G &kp O &kp D &kp Y &kp RET &kp E &kp K &kp E &kp M &kp F &kp E &kp H &kp D &kp D &kp M &kp L &kp G &kp K &kp T &kp L &kp W &kp Y &kp QMARK &kp PG_UP>;
             label = "KILLAGREE";
         };
 
