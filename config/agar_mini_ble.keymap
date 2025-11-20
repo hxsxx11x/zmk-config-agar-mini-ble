@@ -147,6 +147,15 @@
         };
     };
 
+    macros {
+        Misunderstanding: Misunderstanding {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp A &kp N &kp J &kp S &kp R &kp K &kp SPACE &kp D &kp H &kp G &kp O &kp R &kp K &kp SPACE &kp D &kp L &kp LS(T) &kp D &kp M &kp T &kp L &kp S &kp SPACE &kp E &kp M &kp T &kp SPACE &kp DOT &kp DOT &kp DOT>;
+            label = "MISUNDERSTANDING";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -159,12 +168,12 @@
             >;
         };
 
-        Number {
+        Arrow {
             bindings = <
-&kp GRAVE  &trans  &trans    &TD_UP    &trans     &kp PG_UP  &trans  &trans  &trans         &trans             &trans            &trans  &trans
-&trans     &trans  &TD_LEFT  &TD_DOWN  &TD_RIGHT  &kp PG_DN  &trans  &trans  &trans         &kp RIGHT_BRACKET  &kp SINGLE_QUOTE  &trans
-&trans     &trans  &trans    &trans    &trans     &trans     &trans  &trans  &kp BACKSLASH  &kp SLASH          &trans            &trans
-           &trans  &trans              &trans                &mo 4                          &trans             &trans
+&kp GRAVE  &trans  &trans    &kp UP    &trans     &kp PG_UP  &trans  &trans  &trans         &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &trans  &trans
+&lt 5 TAB  &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN  &trans  &trans  &trans         &trans            &trans             &trans
+&trans     &trans  &trans    &trans    &trans     &trans     &trans  &trans  &kp BACKSLASH  &kp SLASH         &trans             &trans
+           &trans  &trans              &trans                &mo 4                          &trans            &trans
             >;
         };
 
@@ -195,12 +204,12 @@
             >;
         };
 
-        layer6 {
+        Macro {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-        &trans  &trans          &trans          &trans                  &trans  &trans
+&trans  &trans             &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &Misunderstanding  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans             &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+        &trans             &trans          &trans          &trans                  &trans  &trans
             >;
         };
     };
