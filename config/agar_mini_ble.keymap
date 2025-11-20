@@ -27,12 +27,6 @@
             layers = <0>;
         };
 
-        ShiftDelto_ {
-            bindings = <&mt UNDER MINUS>;
-            key-positions = <25 11>;
-            layers = <0>;
-        };
-
         Bang {
             bindings = <&kp EXCL>;
             key-positions = <0 1>;
@@ -122,7 +116,7 @@
             #binding-cells = <0>;
             bindings = <&kp LEFT>, <&kp LG(LEFT)>;
 
-            tapping-term-ms = <150>;
+            tapping-term-ms = <120>;
         };
 
         TD_RIGHT: TD_RIGHT {
@@ -131,7 +125,7 @@
             #binding-cells = <0>;
             bindings = <&kp RIGHT>, <&kp LG(RIGHT)>;
 
-            tapping-term-ms = <150>;
+            tapping-term-ms = <120>;
         };
 
         TD_UP: TD_UP {
@@ -140,7 +134,7 @@
             #binding-cells = <0>;
             bindings = <&kt UP>, <&kp LG(UP)>;
 
-            tapping-term-ms = <150>;
+            tapping-term-ms = <120>;
         };
 
         TD_DOWN: TD_DOWN {
@@ -149,7 +143,7 @@
             #binding-cells = <0>;
             bindings = <&kp DOWN>, <&kp LG(DOWN)>;
 
-            tapping-term-ms = <150>;
+            tapping-term-ms = <120>;
         };
     };
 
@@ -158,37 +152,28 @@
 
         Alpha {
             bindings = <
-&gresc     &kp Q      &kp W     &kp E  &kp R        &kp T  &kp Y        &kp U  &kp I      &kp O         &kp P              &kp DEL          &kp BSPC
-&lt 3 TAB  &kp A      &kp S     &kp D  &kp F        &kp G  &kp H        &kp J  &kp K      &kp L         &TD_colon_quote    &kp RET
-&kp LSHFT  &kp Z      &kp X     &kp C  &kp V        &kp B  &kp N        &kp M  &kp COMMA  &kp DOT       &kp RSHIFT         &lt 4 LG(LS(S))
-           &kp LCTRL  &kp LALT         &lt 1 SPACE         &lt 2 SPACE                    &kp LEFT_GUI  &kp RIGHT_CONTROL
+&gresc         &kp Q         &kp W     &kp E  &kp R        &kp T  &kp Y        &kp U  &kp I      &kp O          &kp P              &kp DEL          &kp BSPC
+&mt LCTRL TAB  &kp A         &kp S     &kp D  &kp F        &kp G  &kp H        &kp J  &kp K      &kp L          &TD_colon_quote    &kp RET
+&kp LSHFT      &kp Z         &kp X     &kp C  &kp V        &kp B  &kp N        &kp M  &kp COMMA  &kp DOT        &kp RSHIFT         &lt 3 LG(LS(S))
+               &kp LEFT_GUI  &kp LALT         &lt 1 SPACE         &lt 2 SPACE                    &kp RIGHT_ALT  &kp RIGHT_CONTROL
             >;
         };
 
         Number {
             bindings = <
-&kp GRAVE  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp N6  &kp N7  &kp N8            &kp N9             &kp N0            &kp MINUS  &kp EQUAL
-&mo 5      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp SINGLE_QUOTE  &trans
-&trans     &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp BACKSLASH     &kp SLASH          &trans            &trans
-           &trans  &trans          &trans          &trans                            &trans             &trans
+&kp GRAVE  &trans  &trans    &TD_UP    &trans     &kp PG_UP  &trans  &trans  &trans         &trans             &trans            &trans  &trans
+&trans     &trans  &TD_LEFT  &TD_DOWN  &TD_RIGHT  &kp PG_DN  &trans  &trans  &trans         &kp RIGHT_BRACKET  &kp SINGLE_QUOTE  &trans
+&trans     &trans  &trans    &trans    &trans     &trans     &trans  &trans  &kp BACKSLASH  &kp SLASH          &trans            &trans
+           &trans  &trans              &trans                &mo 4                          &trans             &trans
             >;
         };
 
-        Function {
+        Function_Number {
             bindings = <
-&kp LC(LS(ESC))  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
-&trans           &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans   &trans
-&trans           &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans   &trans
-                 &trans  &trans          &trans          &trans                  &trans  &trans
-            >;
-        };
-
-        Arrow {
-            bindings = <
-&trans  &trans     &TD_UP     &trans     &kp PAGE_UP    &trans  &trans  &trans  &trans  &trans         &trans             &trans  &trans
-&trans  &TD_LEFT   &TD_DOWN   &TD_RIGHT  &kp PAGE_DOWN  &trans  &trans  &trans  &trans  &trans         &trans             &trans
-&trans  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)      &trans  &trans  &trans  &trans  &trans         &trans             &trans
-        &trans     &trans                &trans                 &trans                  &kp RIGHT_ALT  &kp RIGHT_CONTROL
+&kp LC(LS(ESC))  &kp F1     &kp F2    &kp F3  &kp F4  &kp F5  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10    &kp F11    &kp F12
+&trans           &kp N1     &kp N2    &kp N3  &kp N4  &kp N5  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0     &kp ENTER
+&kp LSHFT        &trans     &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp RSHFT  &trans
+                 &kp LCTRL  &kp LALT          &trans          &trans                  &trans  &trans
             >;
         };
 
@@ -203,10 +188,10 @@
 
         Mouse {
             bindings = <
-&trans  &msc SCRL_DOWN  &mmv MOVE_UP    &msc SCRL_UP     &mkp MB2  &kp ASTERISK  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp MB1  &trans        &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &mkp MB4        &mkp MB3        &mkp MB5         &trans    &trans        &trans  &trans  &trans  &trans  &trans  &trans
-        &trans          &trans                           &trans                  &trans                  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &mkp MB3  &mkp MB2        &mmv MOVE_UP    &trans           &msc SCRL_UP    &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &mkp MB1  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_DOWN  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans          &trans          &trans           &trans          &trans
+        &trans  &trans          &trans          &trans                                    &trans           &trans
             >;
         };
 
