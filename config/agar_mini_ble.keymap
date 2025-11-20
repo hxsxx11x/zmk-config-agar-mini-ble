@@ -153,6 +153,8 @@
             #binding-cells = <0>;
             bindings = <&kp A &kp N &kp J &kp S &kp R &kp K &kp SPACE &kp D &kp H &kp G &kp O &kp R &kp K &kp SPACE &kp D &kp L &kp LS(T) &kp D &kp M &kp T &kp L &kp S &kp SPACE &kp E &kp M &kp T &kp SPACE &kp DOT &kp DOT &kp DOT>;
             label = "MISUNDERSTANDING";
+            wait-ms = <2>;
+            tap-ms = <2>;
         };
 
         HolyCrime: HolyCrime {
@@ -160,6 +162,8 @@
             #binding-cells = <0>;
             bindings = <&none &kp A &kp L &kp C &kp L &kp S &kp DOT &kp SPACE &kp D &kp L &kp R &kp J &kp S &kp SPACE &kp Q &kp J &kp A &kp W &kp H &kp L &kp D &kp I>;
             label = "HOLYCRIME";
+            wait-ms = <2>;
+            tap-ms = <2>;
         };
 
         KillAgree: KillAgree {
@@ -167,6 +171,8 @@
             #binding-cells = <0>;
             bindings = <&none &kp W &kp N &kp R &kp D &kp U &kp D &kp I &kp G &kp O &kp D &kp Y &kp RET &kp E &kp K &kp E &kp M &kp F &kp E &kp H &kp D &kp D &kp M &kp L &kp G &kp K &kp T &kp L &kp W &kp Y &kp QMARK &kp PG_UP>;
             label = "KILLAGREE";
+            wait-ms = <2>;
+            tap-ms = <2>;
         };
 
         TotallyMis: TotallyMis {
@@ -174,6 +180,8 @@
             #binding-cells = <0>;
             bindings = <&kp D &kp H &kp K &kp S &kp W &kp J &kp S &kp D &kp H &kp G &kp O &kp D &kp P &kp D &kp Y>;
             label = "TOTALLYMIS";
+            wait-ms = <2>;
+            tap-ms = <2>;
         };
     };
 
