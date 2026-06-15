@@ -187,7 +187,7 @@
         mtkkey: mtkkey {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none &kp LS(Y) &kp O &kp G &kp M &kp L &kp T &kp N &kp N0 &kp N8 &kp N3 &kp AT &kp EXCL>;
+            bindings = <&none &kp LS(Y) &kp O &kp G &kp M &kp L &kp T &kp N &kp N0 &kp N8 &kp N3 &kp AT &kp EXCL &kp ENTER>;
             label = "MTKKEY";
         };
     };
