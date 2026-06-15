@@ -183,6 +183,13 @@
             wait-ms = <2>;
             tap-ms = <2>;
         };
+
+        mtkkey: mtkkey {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp LS(Y) &kp O &kp G &kp M &kp L &kp T &kp N &kp N0 &kp N8 &kp N3 &kp AT &kp EXCL>;
+            label = "MTKKEY";
+        };
     };
 
     keymap {
@@ -235,10 +242,10 @@
 
         Macro {
             bindings = <
-&trans  &Misunderstanding  &TotallyMis  &HolyCrime  &KillAgree  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans             &trans       &trans      &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans             &trans       &trans      &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-        &trans             &trans                   &trans              &trans                  &trans  &trans
+&trans  &mtkkey  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+        &trans   &trans          &trans          &trans                  &trans  &trans
             >;
         };
     };
