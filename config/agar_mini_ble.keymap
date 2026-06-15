@@ -199,7 +199,7 @@
 
         Arrow {
             bindings = <
-&kp GRAVE  &trans  &trans    &kp UP    &trans     &kp PG_UP  &trans  &trans  &trans         &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &trans  &trans
+&kp GRAVE  &trans  &kp HOME  &kp UP    &kp END    &kp PG_UP  &trans  &trans  &trans         &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &trans  &trans
 &lt 5 TAB  &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN  &trans  &trans  &trans         &trans            &trans             &trans
 &trans     &trans  &trans    &trans    &trans     &trans     &trans  &trans  &kp BACKSLASH  &kp SLASH         &trans             &trans
            &trans  &trans              &trans                &mo 4                          &trans            &trans
