@@ -88,13 +88,13 @@
         };
 
         Minus {
-            bindings = <&mt UNDER KP_MINUS>;
+            bindings = <&mt UNDER MINUS>;
             key-positions = <11 10>;
             layers = <0>;
         };
 
         Equal {
-            bindings = <&mt KP_PLUS KP_EQUAL>;
+            bindings = <&mt KP_PLUS EQUAL>;
             key-positions = <12 11>;
             layers = <0>;
         };
