@@ -232,7 +232,7 @@
         F2paste: F2paste {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp F2 &kp LC(V) &kp ESC>;
+            bindings = <&kp F2 &kp LC(V) &kp ENTER>;
             label = "F2PASTE";
         };
 
