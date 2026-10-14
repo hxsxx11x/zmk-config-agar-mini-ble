@@ -214,6 +214,34 @@
             bindings = <&kp LS(N) &kp LS(B) &kp N2 &kp N5 &kp N0 &kp N6 &kp N0 &kp N5 &kp N0 &kp N3>;
             label = "MTKNB";
         };
+
+        Diff: Diff {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp F2 &kp UNDER &kp LS(D) &kp I &kp F &kp F &kp ENTER>;
+            label = "DIFF";
+        };
+
+        F2copy: F2copy {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp F2 &kp LC(C) &kp ESC>;
+            label = "F2COPY";
+        };
+
+        F2paste: F2paste {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp F2 &kp LC(V) &kp ESC>;
+            label = "F2PASTE";
+        };
+
+        F2pastediff: F2pastediff {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp F2 &kp LC(V) &kp UNDER &kp LS(D) &kp I &kp F &kp F &kp RET>;
+            label = "F2PASTEDIFF";
+        };
     };
 
     keymap {
@@ -232,21 +260,21 @@
             bindings = <
 &kp GRAVE  &trans  &kp HOME  &kp UP    &kp END    &kp PG_UP  &trans  &trans  &trans         &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &trans  &trans
 &kp DEL    &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN  &trans  &trans  &trans         &trans            &trans             &trans
-&kp ENTER  &trans  &trans    &trans    &trans     &trans     &trans  &trans  &kp BACKSLASH  &kp SLASH         &trans             &trans
+&kp ENTER  &trans  &trans    &F2copy   &F2paste   &trans     &trans  &trans  &kp BACKSLASH  &kp SLASH         &trans             &trans
            &trans  &trans              &trans                &mo 4                          &trans            &trans
             >;
         };
 
         Function_Number {
             bindings = <
-&kp LC(LS(ESC))  &kp F1     &kp F2    &kp F3  &kp F4  &kp F5  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10    &kp F11    &kp F12
-&kp CAPS         &kp N1     &kp N2    &kp N3  &kp N4  &kp N5  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0     &kp ENTER
-&kp LSHFT        &trans     &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp RSHFT  &trans
-                 &kp LCTRL  &kp LALT          &trans          &trans                  &trans  &trans
+&kp LC(LS(ESC))  &kp F1     &kp F2    &kp F3  &kp F4        &kp F5  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10    &kp F11    &kp F12
+&kp CAPS         &kp N1     &kp N2    &kp N3  &kp N4        &kp N5  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0     &kp ENTER
+&kp LSHFT        &trans     &trans    &trans  &F2pastediff  &trans  &trans  &trans  &trans  &trans  &kp RSHFT  &trans
+                 &kp LCTRL  &kp LALT          &trans                &trans                  &trans  &trans
             >;
         };
 
-        Bluetooth {
+        Bluetooth,Macro {
             bindings = <
 &out OUT_USB    &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &trans  &trans  &trans  &trans  &trans  &trans   &trans  &sys_reset       &bootloader
 &out OUT_BLE    &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &trans  &trans  &trans  &trans  &trans  &trans   &trans  &kp LC(LA(DEL))
@@ -266,10 +294,10 @@
 
         Macro {
             bindings = <
-&trans  &mtkkey  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-        &trans   &trans          &trans          &trans                  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+        &trans  &trans          &trans          &trans                  &trans  &trans
             >;
         };
     };
