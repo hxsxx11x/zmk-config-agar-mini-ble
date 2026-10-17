@@ -100,13 +100,18 @@
         };
 
         Shift_Tab {
-            bindings = <&kp LS(TAB)>;
+            bindings = <&kp LC(TAB)>;
             key-positions = <25 13>;
         };
 
         Ctrl_Shift_Tab {
             bindings = <&kp LS(LC(TAB))>;
-            key-positions = <0 13 25>;
+            key-positions = <0 13>;
+        };
+
+        taskmanager {
+            bindings = <&kp LC(LS(ESC))>;
+            key-positions = <13 0 25>;
         };
     };
 
@@ -242,6 +247,34 @@
             bindings = <&kp F2 &kp LC(V) &kp UNDER &kp LS(D) &kp I &kp F &kp F &kp RET>;
             label = "F2PASTEDIFF";
         };
+
+        ctrlaltdelesc: ctrlaltdelesc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LA(DEL)) &kp ESC>;
+            label = "CTRLALTDELESC";
+        };
+
+        SSNB1: SSNB {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp P &kp H &kp O &kp N &kp E &kp N0 &kp N0 &kp EXCL &kp EXCL &kp ENTER>;
+            label = "SSNB";
+        };
+
+        SSNB2: SSNB2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp P &kp H &kp O &kp N &kp E &kp N0 &kp N0 &kp RET>;
+            label = "SSNB2";
+        };
+
+        ctrlaltdelescpw: ctrlaltdelescpw {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LA(DEL)) &kp ESC &kp P &kp H &kp O &kp N &kp E &kp N0 &kp N0 &kp EXCL &kp EXCL &kp RET>;
+            label = "CTRLALTDELESCPW";
+        };
     };
 
     keymap {
@@ -276,10 +309,10 @@
 
         Bluetooth,Macro {
             bindings = <
-&out OUT_USB    &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &trans  &trans  &trans  &trans  &trans  &trans   &trans  &sys_reset       &bootloader
-&out OUT_BLE    &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &trans  &trans  &trans  &trans  &trans  &trans   &trans  &kp LC(LA(DEL))
-&bt BT_CLR_ALL  &bt BT_CLR     &trans         &trans         &trans  &trans  &trans  &trans  &mtkid  &mtkkey  &mtknb  &trans
-                &trans         &trans                        &trans          &trans                  &trans   &trans
+&out OUT_USB    &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &trans  &trans  &trans  &trans  &trans  &trans     &trans            &sys_reset      &bootloader
+&out OUT_BLE    &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &trans  &trans  &trans  &trans  &trans  &kp LG(L)  &ctrlaltdelescpw  &ctrlaltdelesc
+&bt BT_CLR_ALL  &bt BT_CLR     &trans         &trans         &trans  &trans  &trans  &trans  &mtkid  &mtkkey    &mtknb            &trans
+                &trans         &trans                        &trans          &trans                  &SSNB1     &SSNB2
             >;
         };
 
