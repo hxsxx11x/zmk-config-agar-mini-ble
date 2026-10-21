@@ -3,6 +3,8 @@
  *
  * SPDX-License-Identifier: MIT
  */
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 9000 // default: 600
+
 
 #include "./boards/shields/klink_kbd/common.keymap"
 #include <behaviors.dtsi>
@@ -334,4 +336,9 @@
             >;
         };
     };
+};
+
+&mmv {
+    time-to-max-speed-ms = <100>; // Default: 300
+    acceleration-exponent = <1>;
 };
